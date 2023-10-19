@@ -1,0 +1,64 @@
+{% extends 'navbar.html' %}
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+            <h1>Comment page</h1>
+            <div class="col-9">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="card shadow-lg">
+                            <div class="card-img">
+                                <img style="width: 100%; height: 230px; border-radius: 0;" src="{{ project_com.project_image.url }}" alt="">
+                            </div>
+                            <div class="card-body">
+                                <h3 class="text-center">{{project_com.name}}</h3>
+                                <p>narxi: <strong class="text-danger">{{project_com.price}}</strong></p>
+                                <a href="{{project_com.github_link}}">github link</a>
+                                <br>
+                                <p>yonalish: <b>{{project.yonalish}}</b></p>
+                                <p>{{project_com.date_cleaned}}</p>
+                                <span> <i class="fa-regular fa-eye"></i> {{count_hits}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <form action="{% url 'comment' project_com.id  %}" method="POST">
+                            {% csrf_token %}
+                            {% for f in form %}
+                                <label for="">{{f.label}}</label>
+                                <p>{{f}}</p>
+                            {% endfor %}
+                            <button class="btn btn-primary">save</button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-3">
+                <h4>commentarya soni ( {{comment_count}} )</h4>
+                <div class="comment_container">
+                    {% for comment in com_data %}
+                    <div class="commit_box">
+                        <div class="commit_image_box">
+                            <div class="commit_image">
+                                {% if comment.user_profile_image %}
+                                    <img src="{{ comment.user_profile_image.url }}" alt="User Profile Image">
+                                {% endif %}
+                            </div>
+                            <h4>{{comment.name}}</h4>
+                        </div>
+                        <div class="commit_text ">
+                            <p class="text-start">{{ comment.comment }}</p>
+                            <span>{{ comment.uptime }}  </span>
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+            
+        </div>
+
+    </div>
+
+{% endblock %}

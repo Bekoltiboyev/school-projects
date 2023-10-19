@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    {% extends 'navbar.html' %}
+    
+    {% block content %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-4">
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-success" role="alert">
+                            {{message}}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <div >
+                    <h1 class="text-center">home</h1>
+                    <li class="text-end list-unstyled">online user: {{ online_users }}</li>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    {% endblock %}
+</body>
+</html>

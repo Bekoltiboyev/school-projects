@@ -1,0 +1,93 @@
+.accont_btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 0 10px;
+    border: 2px solid grey;
+}
+.accont_btn img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.dropdown-toggle::after{
+    color: black;
+    vertical-align: bottom;
+    position: relative;
+    left: -10px;
+}
+.dropdown-menu[data-bs-popper]{
+    left: -110px;
+}
+.card img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+}
+
+h1{
+    color: rgb(43, 0, 255);
+}
+.card_image img{
+    width: 100%;
+    height: 230px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.comment_container{
+    width: 95%;
+    height: 600px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    margin: 0 auto;
+    padding: 10px 5px;
+}
+.commit_image_box{
+    display: flex;
+    width: 100%;
+    height: 70px;
+    align-items: center;
+    column-gap: 30px;
+}
+
+.commit_image{
+    width: 60px;
+    height: 60px;
+    background-color: blue;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.commit_image img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    
+}
+.commit_box{
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    border: 2px solid grey;
+    height: auto;
+    align-items: start;
+    position: relative;
+    justify-content: start;
+    column-gap: 15px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 6px 2px rgba(0, 0, 0, 0.3);
+    padding: 10px 10px 20px 10px;
+}
+.commit_text span{
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+}

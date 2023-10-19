@@ -1,0 +1,17 @@
+{% extends 'navbar.html' %}
+
+{% block content %}
+    <div class="container mt-4">
+        <h1 class="text-center">delete Project</h1>
+        <div class="row">
+            <div class="col-md-12">
+                <form action="{% url 'delete_project' project_delete.id  %}" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <p><strong>{{project_delete.name}}</strong> project o'chirilsinmi</p>
+                    <button type="submit">delete project</button>
+                    <a href="" class="btn mt-3 btn-primary">c</a>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

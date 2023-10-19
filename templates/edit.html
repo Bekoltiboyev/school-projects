@@ -1,0 +1,19 @@
+{% extends 'navbar.html' %}
+
+{% block content %}
+
+    <div class="container">
+        <h1>Edit Profile</h1>
+        <form action="{% url 'edit_profile' id_user %}" method="POST" enctype="multipart/form-data">
+            {% for f in form %}
+                {% csrf_token %}
+                <label for="">{{f.label}}</label>
+                <p>{{f}}</p>
+            {% endfor %}
+            <button class="btn btn-primary">save</button>
+        </form>
+
+    </div>
+
+
+{% endblock %}
